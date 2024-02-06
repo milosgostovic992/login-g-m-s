@@ -1,0 +1,21 @@
+.home__heading {
+	color: #fff;
+}
+
+.row__list {
+	display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100%, auto)); /* Items will adjust to fill available space */
+    gap: 20px; /* Adjust gap between grid items as needed */
+}
+
+.row__par-holder {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.row__heading {
+	color: #fff;
+}
