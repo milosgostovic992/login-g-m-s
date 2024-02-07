@@ -20,7 +20,7 @@ const LoginSignUp = () => {
                 Log in
             </button>
         </div>
-        <div className="header">
+        <div className="login__header">
             <div className="text">
                {action}
             </div>

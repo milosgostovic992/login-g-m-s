@@ -1,4 +1,4 @@
-import { createContext, useRef, useState } from "react";
+import { createContext, useMemo, useRef, useState } from "react";
 import {useNavigate} from "react-router-dom"
 import { database } from "../FireBaseConfig";
 import {signOut} from "firebase/auth";
@@ -59,15 +59,16 @@ const LoginContextProvider = ({children})=> {
         }
        };
 
-const value = {
-    emailRef,
-    pswRef,
-    action,
-    signUpHandler,
-    loginHandler,
-    submitHandler,
-    signOutHandler
-}
+       const value = useMemo(() => ({
+        emailRef,
+        pswRef,
+        action,
+        signUpHandler,
+        loginHandler,
+        submitHandler,
+        signOutHandler
+       }))
+
 
 return (
     <LoginContext.Provider value={{...value}}>

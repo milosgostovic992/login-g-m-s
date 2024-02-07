@@ -1,21 +1,29 @@
 import './Home.scss';
-import Games from '../Games/Games';
 import { Link } from 'react-router-dom';
+import Header from "../Header/Header"
+import Card from '../../UI/Card/Card';
 
 const Home = () => {
   return (
-    <ul>
-      <li>
-        <Link to="/games">Games</Link>
-      </li>
-      <li>
-        <Link to="/movies">Movies</Link>
-      </li>
-      <li>
-        <Link to="/songs">Songs</Link>
-      </li>
+   <>
+   <Header heading="Home" buttonName="Sign Out"/>
+   <div className="wrap">
+   
+   <ul className='home__list'>
+   <h2 className='home__title'>Choose your group</h2>
+      <Card classname="home__item">
+        <Link className='home__link' to="/games">Games</Link>
+      </Card>
+      <Card classname="home__item">
+        <Link className='home__link' to="/movies">Movies</Link>
+      </Card>
+      <Card classname="home__item">
+        <Link className='home__link' to="/songs">Songs</Link>
+      </Card>
     </ul>
-  
+   </div>
+    
+   </>
   )
 }
 

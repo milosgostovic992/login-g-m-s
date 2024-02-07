@@ -1,40 +1,38 @@
 
-import React, { useEffect, useState } from 'react';
+import { useContext } from 'react';
+import { ListContext } from '../../context/ListContext';
 import Card from '../../UI/Card/Card';
+import Loader from '../../UI/Loader/Loader';
+import Header from '../Header/Header';
+import ListItem from '../ListItem/ListItem';
 
 const Movies = () => {
-    const [movies, setMovies] = useState([]);
+ 
+  const contextAPI = useContext(ListContext)
+  const {isLoading, movies} = contextAPI;
 
-    useEffect(() => {
-        const apiKey = 'e01dd6b7442cd6f6d80eb2340f9db82c';
-        const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}`;
-        
-        fetch(url)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-          })
-          .then(data => {
-            setMovies(data.results);
-            console.log(data.results);
-          })
-          .catch(error => {
-            console.error('Error fetching token:', error);
-          });
-    }, []);
+  console.log(movies);
 
   return (
     <>
-    <ul>
-        {
-            movies.map((m, index)=> (
-                <Card classname="test" key={index}>{m.id}
-                <p>{m.original_title}</p></Card>
-            ))
-        }
-    </ul>
+     <Header heading="Movies" backButton="Back" buttonName="Sign Out"/>
+    <div className="row">
+      <h1 className="row__heading">Popular Movies</h1>
+      {isLoading && <Loader/>}
+    {!isLoading && 
+      <ul className='row__list'>
+        {movies.map((m, index)=> (
+          <ListItem 
+          key={index}
+          bgImage={`https://image.tmdb.org/t/p/original/${m.backdrop_path}`}
+          name={m.original_title}
+          released={m.release_date}
+          overview={m.overview}
+          />
+        ))}
+     </ul>}
+    </div>
+   
     </>
   )
 }

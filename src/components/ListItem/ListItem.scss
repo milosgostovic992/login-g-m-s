@@ -18,9 +18,10 @@
 }
 
 .row__img-holder {
-	height: 300px;
-    width: 500px;
-	margin-right: 10%;
+    height: 300px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .row__img {
