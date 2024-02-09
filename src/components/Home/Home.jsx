@@ -18,7 +18,7 @@ const Home = () => {
         <Link className='home__link' to="/movies">Movies</Link>
       </Card>
       <Card classname="home__item">
-        <Link className='home__link' to="/songs">Songs</Link>
+        <Link className='home__link' to="/dota2">Dota2</Link>
       </Card>
     </ul>
    </div>

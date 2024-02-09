@@ -26,6 +26,10 @@ const LoginContextProvider = ({children})=> {
     const loginHandler = () => {
         setAction('Log in')
     };
+
+    const goBack = () => {
+        history("/home");
+    }
     
        const submitHandler = (e, type) => {
         e.preventDefault();
@@ -34,7 +38,6 @@ const LoginContextProvider = ({children})=> {
         
         if (action === 'Sign Up') { // Check the type
             createUserWithEmailAndPassword(database, email, psw).then(data => {
-                console.log(type);
                 console.log(data, 'authData');
                 history("/home")
                 })
@@ -48,7 +51,6 @@ const LoginContextProvider = ({children})=> {
         if (action === 'Log in') {
             signInWithEmailAndPassword(database, email, psw).then(data => {
                 console.log(data, 'authData');
-                console.log(type);
                 history("/home")
                 })
                 .catch(error => {
@@ -66,7 +68,8 @@ const LoginContextProvider = ({children})=> {
         signUpHandler,
         loginHandler,
         submitHandler,
-        signOutHandler
+        signOutHandler,
+        goBack
        }))
 
 

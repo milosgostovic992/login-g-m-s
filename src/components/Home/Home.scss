@@ -41,10 +41,12 @@
 .row {
     padding: 100px 0;
 }
+
 .row__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(calc(50% - 10px), 1fr));
     gap: 20px;
+    margin-bottom: 100px;
 }
 
 .row__par-holder {

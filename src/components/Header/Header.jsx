@@ -1,15 +1,12 @@
 import React from 'react'
 import { useContext } from 'react'
 import { LoginContext } from '../../context/LoginContext'
-import { ListContext } from '../../context/ListContext';
 import './Home.scss'
 
 const Header = ({heading, buttonName, backButton}) => {
 
     const context = useContext(LoginContext);
-    const contextAPI = useContext(ListContext);
-    const {signOutHandler} = context;
-    const {goBack} = contextAPI;
+    const {signOutHandler, goBack} = context;
 
   return (
     <header className='header'>
