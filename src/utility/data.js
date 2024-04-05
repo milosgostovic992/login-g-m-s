@@ -6,7 +6,8 @@ export const contentTypes = [
       nameKey: 'original_title',
       bgImageKey: 'backdrop_path',
       releasedKey: 'release_date',
-      overview: 'overview'
+      overview: 'overview',
+      rating: 'vote_average'
     },
     {
       type: 'games',
@@ -14,13 +15,15 @@ export const contentTypes = [
       nameKey: 'name',
       bgImageKey: 'background_image',
       platform: 'parent_platforms',
-      releasedKey: 'released'
+      releasedKey: 'released',
+      rating: 'rating'
     },
     {
       type: 'Dota2',
       endpoint: 'https://api.opendota.com/api/teams?limit=100',
       nameKey: 'name',
       bgImageKey: 'logo_url',
-      wins: 'wins'
+      wins: 'wins',
+      rating: 'rating'
     }
   ];

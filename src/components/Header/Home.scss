@@ -1,12 +1,67 @@
 .header {
-	display: flex;
-	justify-content: space-between;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100% - 100px);
+	padding: 30px 50px;
+	z-index: 10;
+	transition: 400ms;
+	border-radius: 0 0 40px;
+}
+
+.active {
+	background-color: #545b5ec2;
 }
 
 .header__heading {
 	color: #fff;
 }
+
+.header__button-holder {
+	display: flex;
+    margin-left: auto;
+	.btn {
+		margin: 0 20px 0 auto;
+		max-width: 100%;
+		width: 200px;
+		text-align: center;
+	}
+}
+
+.btn {
+	display: inline-block;
+    max-width: 200px;
+    width: 100%;
+    margin: 0 auto;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 15px;
+	gap: 15px;
+	background-color: transparent;
+	outline: 1px #ffffff solid;
+	outline-offset: -3px;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	transition: 400ms;
+	.text {
+		color: white;
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 22px;
+		transition: 400ms;
+	  }
+	&:hover {
+		background-color: transparent;
+		.text {
+			color: #ffffff;
+		  }
+	}
+  }
+
+  .btn--signout {
+	margin: 0 !important;
+  }
+  

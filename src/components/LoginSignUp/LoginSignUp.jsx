@@ -4,6 +4,7 @@ import './LoginSignUp.scss';
 import { LoginContext } from '../../context/LoginContext';
 import Form from '../Form/Form';
 
+
 const LoginSignUp = () => {
 
     const context = useContext(LoginContext);
@@ -13,11 +14,11 @@ const LoginSignUp = () => {
   return (
     <div className="container">
          <div className="submit-container">
-            <button onClick={signUpHandler} type='button' className={action === "Log in" ? "submit innactive" : "submit"}>
-                Sign Up
+            <button onClick={signUpHandler} type='button' className={action === "Log in" ? "btn innactive" : "btn"}>
+                 <p class="text">Sign Up</p>
             </button>
-            <button onClick={loginHandler} type='button' className={action === "Sign Up" ? "submit innactive" : "submit"}>
-                Log in
+            <button onClick={loginHandler} type='button' className={action === "Sign Up" ? "btn innactive" : "btn"}>
+                <p class="text">Login</p>
             </button>
         </div>
         <div className="login__header">

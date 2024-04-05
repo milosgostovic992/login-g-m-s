@@ -14,16 +14,15 @@ const useFetch = (url) => {
             console.log(response.data);
             if (response.data.results) {
                 setData(response.data.results);
-                console.log("data.results");
             } else {
                 setData(response.data);
-                console.log("data");
             }
         } catch (error) {
             setIsLoading(false);
         }
     };
 
+    
     fetchData();
 
 }, [url]);

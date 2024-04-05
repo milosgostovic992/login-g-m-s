@@ -28,7 +28,17 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-image: url('./assets/bgImg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  object-fit: cover;
 }
+
+select {
+  position: relative;
+}
+
 
 h1 {
   font-size: 3.2em;
@@ -51,7 +61,7 @@ button:hover {
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 4px auto transparent;
 }
 
 @media (prefers-color-scheme: light) {
@@ -65,4 +75,8 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+input {
+  position: relative;
 }

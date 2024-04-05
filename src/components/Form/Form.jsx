@@ -21,7 +21,7 @@ const Form = () => {
             <img src={pswIcon} alt="" />
             <input ref={pswRef} type="password" placeholder='Password'/>
         </div>
-        <button>{action === 'Log in' ? 'Log in' : "Sign up"}</button>
+        <button className='btn'><p className="text">{action === 'Log in' ? 'Log in' : "Sign up"}</p></button>
     </form>
   )
 }
